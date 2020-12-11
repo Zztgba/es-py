@@ -1,5 +1,5 @@
 #!/usr/bin/env/python
-#_*_coding:utf-8_*_
+# _*_coding:utf-8_*_
 
 from elasticsearch import Elasticsearch
 
@@ -16,12 +16,12 @@ board_mappings = {
 			'type': 'text',
 			'analyzer': 'ik_max_word',
 			'search_analyzer': 'ik_max_word',
-			},
+		},
 		'py_name': {
 			'type': 'text',
 			'analyzer': 'pinyin',
 			'search_analyzer': 'pinyin',
-			},
+		},
 		'introduce': {
 			'type': 'text',
 			'analyzer': 'ik_max_word',
@@ -41,15 +41,15 @@ game_mappings = {
 			'type': 'text',
 			'analyzer': 'ik_max_word',
 			'search_analyzer': 'ik_max_word',
-			},
+		},
 		'en_name': {
 			'type': 'text',
-			},
+		},
 		'py_name': {
 			'type': 'text',
 			'analyzer': 'pinyin',
 			'search_analyzer': 'pinyin',
-			},
+		},
 		'introduce': {
 			'type': 'text',
 			'analyzer': 'ik_max_word',
@@ -73,7 +73,6 @@ def insert_index():
 	es.indices.create(index='game', ignore=400)
 	es.indices.put_mapping(index='game', doc_type='gameinfo', body=game_mappings)
 
-	pass
 
 def insert_game(id, name, en_name, py_name, introduce, tag_name):
 	"""
@@ -95,7 +94,6 @@ def insert_game(id, name, en_name, py_name, introduce, tag_name):
 	}
 	res = es.create(index="game", id=id, body=data_game, doc_type="gameinfo")
 	print(res)
-
 
 
 def insert_board(id, name, py_name, introduce, game_list):
