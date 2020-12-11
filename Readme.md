@@ -1,3 +1,5 @@
+ES查询规则文档 [点击此处](https://github.com/Zztgba/es-py/blob/master/search/README.md)
+
 ## 环境搭建文档
 
 ### Java环境配置
@@ -125,4 +127,3 @@ elasticsearch.hosts: ["http://192.168.111.129:9200", "localhost:9200", ...]
 elasticsearch.username: ""
 elasticsearch.password: ""
 ```
-
